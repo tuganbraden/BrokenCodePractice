@@ -13,6 +13,7 @@ namespace Pokemon_Console
         public void Run()
         {
             SeedPokemonTeam();
+            runmenu(); // added runmenu to boot up UI
         }
         public void runmenu()
         {
