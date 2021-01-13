@@ -13,9 +13,9 @@ namespace Pokemon_Console
         public void Run()
         {
             SeedPokemonTeam();
-            runmenu(); // added runmenu to boot up UI
+            RunMenu(); // added runmenu to boot up UI
         }
-        public void runmenu()
+        public void RunMenu()
         {
             bool continueToRunMenu = false;
 
@@ -32,8 +32,7 @@ namespace Pokemon_Console
                 switch (response)
                 {
                     case 1:
-                        SeeMyPokemonTeam(); // removed the 'remove;' line, was causing case 1 to be unreachable
-                        Console.Clear();
+                        SeeMyPokemonTeam(); // removed the 'return;' line, was causing case 1 to be unreachable
                         break;
                     case 2:
                         AddPokemonToTeam();
@@ -42,7 +41,7 @@ namespace Pokemon_Console
                         UpdateAPokemonMenu();
                         break;
                     case 4:
-                        RemoveAPokemon();
+                        RemoveAPokemon(); // added 'RemoveAPokemon'
                         break;
                     case 5:
                         continueToRunMenu = false; // 'continueToRun' -> 'continueToRunMenu'
@@ -193,8 +192,6 @@ namespace Pokemon_Console
                         $"\nMove One: {pokemonTeam[i].MoveOne} - Move Two: {pokemonTeam[i].MoveTwo}" +
                         $"\nMove Three: {pokemonTeam[i].MoveThree} - Move Four: {pokemonTeam[i].MoveFour}");
                 }
-
-
 
                 Console.WriteLine("\n\nEnter position number of pokemon you wish to update");
                 int response = int.Parse(Console.ReadLine()); // added 'Console.ReadLine()' to get user input

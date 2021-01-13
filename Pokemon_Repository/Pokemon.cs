@@ -9,7 +9,7 @@ namespace Pokemon_Repository
     // private -> public | can't be declared private
     public enum PokemonType
     {
-        Normal = 100,
+        Normal = 1, // changed index to 1
         Grass,
         Fire,
         Water,

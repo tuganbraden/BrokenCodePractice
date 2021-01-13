@@ -14,8 +14,11 @@ namespace Pokemon_Repository
 
         //add to list (limit pokemon to 6)
         public void AddPokemonToTeam(Pokemon pokemon) // needed a return type
-        {  
-            _pokemonTeam.Add(pokemon); // 'new Pokemon' -> 'pokemon' | needs to use the Pokemon passed from the parameter, not create a new one
+        {
+            if (_pokemonTeam.Count < 6)
+            {
+                _pokemonTeam.Add(pokemon); // 'new Pokemon' -> 'pokemon' | needs to use the Pokemon passed from the parameter, not create a new one
+            }
         }
         //get list
         public List<Pokemon> GetPokemonTeam()
